@@ -4,10 +4,13 @@ tosort_folder=$1
 
 pushd $tosort_folder &> /dev/null
 
-doc_ext=("pdf" "odt" "txt" "html" "js" "css" "csv" "sql" "php" "xml" "ini" "sh" "docx" "java" "class" "py")
+doc_ext=("pdf" "odt" "txt" "html" "js" "css" "csv" "sql" "php" "xml" "ini" "sh" "docx" "java" "class" "py" "ai" "fig")
 img_ext=("png" "jpg" "svg" "webp" "jpeg")
 vid_ext=("mp4" "avi" "mov")
-audio_ext=("mp3" "ogg" "wav")
+audio_ext=("mp3" "ogg" "wav" "aac")
+archive_ext=("zip" "rar" "tar" "tar.gz" "tar.xz" "deb" "rpm" "apk" "iso" "tgz" "jar" "vsix")
+
+mkdir ~/Archives #create folder if no exist
 
 function move_files() {
 
@@ -31,6 +34,7 @@ move_files "$HOME/Documents" ${doc_ext[@]}
 move_files "$HOME/Pictures" ${img_ext[@]}
 move_files "$HOME/Videos" ${vid_ext[@]}
 move_files "$HOME/Music" ${audio_ext[@]}
+move_files "$HOME/Archives" ${archive_ext[@]}
 
 popd &> /dev/null
 
