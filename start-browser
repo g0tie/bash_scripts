@@ -1,4 +1,0 @@
-#!/bin/bash
-
-links=("calendar.google.com" "keep.google.com" "fb.com" "linked.in" "gmail.com")
-$1 ${links[@]}
