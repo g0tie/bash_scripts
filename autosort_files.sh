@@ -10,7 +10,7 @@ vid_ext=("mp4" "avi" "mov")
 audio_ext=("mp3" "ogg" "wav" "aac")
 archive_ext=("zip" "rar" "tar" "tar.gz" "tar.xz" "deb" "rpm" "apk" "iso" "tgz" "jar" "vsix")
 
-mkdir ~/Archives #create folder if no exist
+mkdir -p ~/Archives #create folder if no exist
 
 function move_files() {
 
