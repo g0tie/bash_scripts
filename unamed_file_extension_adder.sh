@@ -10,6 +10,7 @@ for file in ${files[@]}
 do
     isText=$(file $file | grep -o text)
     isAudio=$(file $file | grep -o audio)
+    isImage=$(file $file | grep -o image)
 
     if [[ $isText == "text" ]]
     then
@@ -26,6 +27,17 @@ do
         [[ $isMp3 == "MPEG" ]] && mv $file $file.mp3
         [[ $isOgg == "Ogg" ]] && mv $file $file.ogg
         [[ $isAac == "AAC" ]] && mv $file $file.aac
+    fi
+
+    if [[ $isImage == "image" ]]
+    then
+        isJpeg=$(file $file | grep -o -i "JPEG")
+        isPng=$(file $file | grep -o -i "PNG")
+        isSvg=$(file $file | grep -o -i "SVG")
+        
+        [[ $isJpeg == "JPEG" ]] && mv $file $file.jpg
+        [[ $isPng == "PNG" ]] && mv $file $file.png
+        [[ $isSvg == "SVG" ]] && mv $file $file.svg
     fi
 
 done
