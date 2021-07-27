@@ -31,9 +31,9 @@ function move_files() {
 }
 
 move_files "$HOME/Documents" ${doc_ext[@]}
-move_files "$HOME/Pictures" ${img_ext[@]}
-move_files "$HOME/Videos" ${vid_ext[@]}
-move_files "$HOME/Music" ${audio_ext[@]}
+move_files "$HOME/Images" ${img_ext[@]}
+move_files "$HOME/Vidéos" ${vid_ext[@]}
+move_files "$HOME/Musique" ${audio_ext[@]}
 move_files "$HOME/Archives" ${archive_ext[@]}
 
 popd &> /dev/null
