@@ -10,14 +10,12 @@ read answer
 
 micPids=($(grep -E owner_pid /proc/asound/card*/pcm*/sub*/status | cut -d":" -f3 | tr -s " "))
 
-if [ "$answer" == "y" || "$answer" == "Y" ]
+if [[ "$answer" == "y" || "$answer" == "Y" ]]
 then
 	for pid in "${micPids[@]}" 
 	do
 		kill $pid
 	done
-else
-	exit 0
 fi
 }
 
@@ -27,14 +25,12 @@ read answer
 
 camPids=($(lsof /dev/video* | cut -d' ' -f3 | uniq | sed '/^[[:space:]]*$/d' ))
 
-if [ "$answer" == "y" || "$answer" == "Y" ]
+if [[ "$answer" == "y" || "$answer" == "Y" ]]
 then
 	for pid in "${camPids[@]}" 
 	do
 		kill $pid
 	done
-else
-	exit 0
 fi
 }
 
