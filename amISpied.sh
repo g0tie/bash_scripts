@@ -5,6 +5,7 @@ isCamUsed=$(lsof /dev/video*)
 
 
 function killmicrocesses {
+echo ""
 echo "Would you like to kill all those processes ? (y/n) "
 read answer
 
@@ -20,6 +21,7 @@ fi
 }
 
 function killcamprocesses {
+echo ""
 echo "Would you like to kill all those processes ? (y/n) "
 read answer
 
@@ -40,7 +42,7 @@ then
 else
 	echo "Microphone is used"
 	echo "-----------------"
-	echo $isMicUsed
+	echo "$isMicUsed"
 	killmicrocesses
 fi
 
@@ -50,7 +52,7 @@ then
 else
 	echo "Camera is used"
 	echo "-----------------"
-	echo $isCamUsed
+	echo "$isCamUsed"
 	killcamprocesses
 fi
 
