@@ -1,6 +1,9 @@
 # scripts
 collection of script to automate task on my laptop
 
+<h3>amISpied.sh</h3>
+<p>Know if what processes are using you webcam or microphone and kill them</p>
+
 <h3>autosort_file.sh</h3> 
   
 <p>Put videos, pictures, documents, music, archives inside their respective folders (on French Linux: Vidéos, Images, Musique, Archives) , just indicate folder to sort as argument</p>
