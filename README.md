@@ -2,7 +2,7 @@
 collection of script to automate task on my laptop
 
 <h3>amISpied.sh</h3>
-<p>Know if what processes are using you webcam or microphone and kill them</p>
+<p>Know what processes are using you webcam or microphone and kill them</p>
 
 <h3>autosort_file.sh</h3> 
   
