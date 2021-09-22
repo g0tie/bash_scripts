@@ -4,7 +4,7 @@ tosort_folder=$1
 
 pushd $tosort_folder &> /dev/null
 
-doc_ext=("pdf" "odt" "txt" "html" "js" "css" "csv" "sql" "php" "xml" "ini" "sh" "docx" "java" "class" "py" "ai" "fig")
+doc_ext=("pdf" "odt" "txt" "html" "js" "css" "csv" "sql" "php" "xml" "ini" "sh" "docx" "java" "class" "py" "ai" "fig" "drawio" "cbr" "ppt")
 img_ext=("png" "jpg" "svg" "webp" "jpeg")
 vid_ext=("mp4" "avi" "mov")
 audio_ext=("mp3" "ogg" "wav" "aac")
