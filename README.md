@@ -1,24 +1,7 @@
-# scripts
-collection of script to automate task on my laptop
+# Scripts
+Here are scripts made using bash or pyhton to automate some tasks, get infos quickly or make calculations
 
-<h3>amISpied.sh</h3>
-<p>Know what processes are using you webcam or microphone and kill them</p>
-
-<h3>autosort_file.sh</h3> 
-  
-<p>Put videos, pictures, documents, music, archives inside their respective folders (on French Linux: Vidéos, Images, Musique, Archives) , just indicate folder to sort as argument</p>
-
-<h3>imc.py</h3>
-</p>Indicate your weight and your height as args and it prints your body mass index</p>
-
-<h3>imc.sh</h3>
-<p>Same as previous but in bash</p>
-
-<h3>brightness</h3>
-<p>On Linux computers change brightness (between 0 and 1) and turn night mode if you want</p>
-
-<h3>page_jaune_scrapping.py</h3>
-<p>Indicate Pages Jaune page id and get infos on company or service</p>
-
-<h3>ipsweep</h3>
-<p>Little bash exercies made on HackerX mobile app to scan available ip adresses hosts</p>
+- **amISpied.sh** [bash]: Show processes using microphone or camera on Linux (*Tested on Ubuntu*)
+- **autosort_files.sh** [bash] : Autosort a folder to move images, videos, documents, archives, etc.. in their respective folder (*In french on Ubuntu*)
+- **imc.py** [python] : Short script to calculate body mass index 
+- **pages_jaune_scrapping.py** [python]: Get infos from a service provider or company from french "Pages Jaune" directory based on the directory company id (*Custom POC request by a friend I don't know if it still works*)
