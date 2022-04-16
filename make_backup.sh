@@ -1,6 +1,6 @@
 #!/bin/bash
 
-name=$(date date +%Y-%b-%m)
+name=$(date +%Y-%b-%m)
 name="backup_$name.tar"
 echo "Creating backup in current folder.."
 tar -cvf $name $HOME/Documents $HOME/Archives $HOME/Images $HOME/Vidéos
