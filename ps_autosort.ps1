@@ -1,6 +1,11 @@
 [string[]] $folders = "Images", "Archives", "Exectutables", "Documents";
 $folderToSort = $args[0];
 
+if (!$folderToSort) {
+	Write-Host "You must specify a directory";
+	Exit;
+}
+
 function CreateFolders {
 	Set-Location $folderToSort
 
@@ -31,12 +36,12 @@ function MoveFiles {
 }
 
 function Main {
-	BEGIN { Write-Host "Starting..." }
+	BEGIN { Write-Host "Starting..."; Push-Location $folderToSort }
 	PROCESS {
 		try { CreateFolders; MoveFiles}	
 		catch { "An error has occured: {0}" -F ($_.toString()) }	
 	}
-	END { Write-Host "Files Moved"; Get-ChildItem}
+	END { Write-Host "Files Moved"; Get-ChildItem; Pop-Location $folderToSort}
 
 }
 

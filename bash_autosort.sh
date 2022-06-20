@@ -2,6 +2,12 @@
 shopt -s extglob # turn on globbing
 tosort_folder=$1
 
+if [ -z "$1" ]
+    then
+	    echo "You must specify a directory"
+	    exit		
+fi
+
 function moveFiles() {
 	
     #declare associative array
