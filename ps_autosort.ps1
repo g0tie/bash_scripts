@@ -1,19 +1,11 @@
 [string[]] $folders = "Images", "Archives", "Exectutables", "Documents";
-#[string] $currentPathBase = Split-Path -Path (Get-Location); 
+$folderToSort = $args[0];
 
-function CheckFoldersExists {
+function CreateFolders {
+	Set-Location $folderToSort
 
-	param (
-		[Parameter(Mandatory=$True)]
-		[string] $path
-	)
-
-	foreach ($folder in $folders) {
-		if ( !(Test-Path -Path $folder) ) {
-			"Creating folder {0}..." -F $folder;
-			New-Item -Path $folder -ItemType Directory;		
-		} 
-	}
+	"Creating folder {0}..." -F $folder;
+	New-Item -Path $folders -ItemType Directory -Force;		
 }
 
 function MoveFiles {
@@ -22,7 +14,7 @@ function MoveFiles {
 		images = (Get-ChildItem *.jpg, *.png, *.bmp, *.webp, *.tiff, *.svg).FullName
 		archives = (Get-ChildItem *.zip, *.tar, *.tar.gz, *.rar, *.tgz).FullName
 		executables = (Get-ChildItem *.exe,*.msi).FullName
-		documents =(Get-ChildItem *pdf, *.doc, *.odt, *.csv, *.txt, *.xls, *xlsx, *.rtf, *.ppt, *.pptx, *.js, *.py, *.php, *.opvpn).FullName
+		documents =(Get-ChildItem *.pdf, *.doc, *.odt, *.csv, *.txt, *.xls, *xlsx, *.rtf, *.ppt, *.pptx, *.js, *.py, *.php, *.opvpn).FullName
 	}
 
 	foreach ($file in $files.GetEnumerator()) { 
@@ -41,7 +33,7 @@ function MoveFiles {
 function Main {
 	BEGIN { Write-Host "Starting..." }
 	PROCESS {
-		try { CheckFoldersExists (Get-Location); MoveFiles}	
+		try { CreateFolders; MoveFiles}	
 		catch { "An error has occured: {0}" -F ($_.toString()) }	
 	}
 	END { Write-Host "Files Moved"; Get-ChildItem}
