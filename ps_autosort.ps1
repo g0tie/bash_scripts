@@ -62,7 +62,7 @@ function Main {
 		try { CreateFolders; MoveFiles}	
 		catch { "An error has occured: {0}" -F ($_.toString()) }	
 	}
-	END { Write-Host "Files Moved"; Get-ChildItem; Pop-Location $folderToSort}
+	END { Write-Host "Files Moved"; Get-ChildItem; Pop-Location }
 
 }
 
