@@ -1,6 +1,8 @@
 # Scripts
 Here are scripts made using bash or pyhton to automate some tasks, get infos quickly or make calculations
 
+- **testUserAgent.py** [python] : test server responses based on a list o user-agents from a text file at a given URL 
+- **generateAlphabet.py** [python]: generate uppercase alphabet, you can use ">" bash operator to store in a different file 
 - **sort_downloads.ps1** [powershell]: Same as autosort_files but in Microsoft Powershell
 - **amISpied.sh** [bash]: Show processes using microphone or camera on Linux (*Tested on Ubuntu*)
 - **autosort_files.sh** [bash] : Autosort a folder to move images, videos, documents, archives, etc.. in their respective folder (*In french on Ubuntu*)
